@@ -1,0 +1,156 @@
+body{
+    position: relative;
+}
+.text-contact{
+    color: #97c93e !important
+}
+
+.site-header {
+    background-color: rgba(0, 0, 0, .85);
+    -webkit-backdrop-filter: saturate(180%) blur(20px);
+    backdrop-filter: saturate(180%) blur(20px);
+}
+.site-header a {
+    color: #999;
+    transition: ease-in-out color .15s;
+}
+.site-header a:hover {
+    color: #fff;
+    text-decoration: none;
+}
+
+#header img{
+    width: 25px;
+}
+
+.btn-contact{
+    background-color: #82ad36;
+    color: white;
+}
+
+.bg-quote{
+    background-color: #82ad36;
+}
+
+.btn-contact:hover{
+    background-color: #97c93e;
+}
+
+#main .carousel-inner img{
+    max-height: 70vh;
+    object-fit: cover;
+}
+
+#carousel {
+    position: relative;
+}
+
+#carousel .overlay{
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+}
+
+#carousel .overlay .container,
+#carousel .overlay .row{
+    height: 100%;
+}
+
+#footer{
+    background: linear-gradient(90deg,#82ad36,#97c93e 25%,#1e7237)
+}
+
+#footer a{
+    color: white;
+}
+
+.contacto{
+    grid-area: contacto;
+    grid-row-gap: 1%;
+    background: #026fff;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 150px;
+}
+
+
+.social-link.facebook{
+    background-image: url("../assets/images/fb.png");
+    background-repeat: no-repeat;
+}
+
+.social-link.github{
+    background-image: url("../assets/images/gh.png");
+    background-repeat: no-repeat;
+}
+
+.social-link.instagram{
+    background-image: url("../assets/images/insta.png");
+    background-repeat: no-repeat;
+}
+
+.form-email input{
+    border-color: gray;
+    border-style: solid;
+    border-radius: 5px;
+    padding: 5px 25px 5px 25px;
+    background-image: url(../assets/images/gh.png);
+    background-size: 25px 15px;
+    background-repeat: no-repeat;
+    background-position-y: center;
+}
+
+.form-email button{
+    display: block;
+    background: transparent;
+    color: white;
+    padding: 10px 0;
+    border-radius: 5px;
+    width: 100px;
+    margin-top: 10px;
+}
+
+.form-email h3{
+    font-family: 'Roboto', sans-serif;
+}
+
+.social-link {
+    display: inline-block;
+    width: 50px;
+    height: 50px;
+    margin: 0 10px;
+    background-size: 50px 50px;
+}
+
+
+#nvl-sup{
+    background-image: url("../assets/images/Esime_Culhuacán.jpg");
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    color: white;
+}
+
+#nvl-md-sup{
+    background-image: url("../assets/images/CECyT9.jfif");
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    color: white;
+}
+
+#edu-online{
+    background-image: url("../assets/images/remote-degree-online.jpg");
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    color: white;
+}
