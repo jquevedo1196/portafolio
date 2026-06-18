@@ -6,6 +6,7 @@ interface Props {
 
 const { title, description = "Jesús Quevedo — Principal DevOps Engineer / SRE" } = Astro.props;
 const currentPath = Astro.url.pathname;
+const base = import.meta.env.BASE_URL;
 ---
 
 <!doctype html>
@@ -14,7 +15,7 @@ const currentPath = Astro.url.pathname;
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content={description} />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" type="image/svg+xml" href={`${base}favicon.svg`} />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet" />
@@ -23,13 +24,13 @@ const currentPath = Astro.url.pathname;
   <body>
     <nav class="nav">
       <div class="container">
-        <a href="/" class="nav-logo">jquevedo<span>.dev</span></a>
+        <a href={base} class="nav-logo">jquevedo<span>.dev</span></a>
         <ul class="nav-links">
-          <li><a href="/" class:list={[{ active: currentPath === "/" }]}>Home</a></li>
-          <li><a href="/about" class:list={[{ active: currentPath === "/about/" }]}>About</a></li>
-          <li><a href="/projects" class:list={[{ active: currentPath.startsWith("/projects") }]}>Projects</a></li>
-          <li><a href="/blog" class:list={[{ active: currentPath.startsWith("/blog") }]}>Blog</a></li>
-          <li><a href="/resume" class:list={[{ active: currentPath === "/resume/" }]}>Resume</a></li>
+          <li><a href={base} class:list={[{ active: currentPath === base }]}>Home</a></li>
+          <li><a href={`${base}about/`} class:list={[{ active: currentPath.includes("/about") }]}>About</a></li>
+          <li><a href={`${base}projects/`} class:list={[{ active: currentPath.includes("/projects") }]}>Projects</a></li>
+          <li><a href={`${base}blog/`} class:list={[{ active: currentPath.includes("/blog") }]}>Blog</a></li>
+          <li><a href={`${base}resume/`} class:list={[{ active: currentPath.includes("/resume") }]}>Resume</a></li>
         </ul>
       </div>
     </nav>
