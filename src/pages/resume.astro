@@ -1,0 +1,100 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="Resume" description="Resume of Jesús Quevedo — Principal DevOps Engineer / SRE">
+  <section class="article" style="max-width:800px; padding-bottom:4rem;">
+    <div class="section-header">
+      <p class="section-label">$ cat resume.yaml</p>
+      <h1 class="section-title">Resume</h1>
+      <div class="section-line"></div>
+    </div>
+
+    <div style="margin-top:1.5rem; margin-bottom:2rem;">
+      <a href="/Resume_DevOps_SRE_v2.pdf" download class="btn btn-primary">
+        Download PDF
+      </a>
+    </div>
+
+    <div class="article-content">
+      <h2>Summary</h2>
+      <p>
+        Principal DevOps/SRE Engineer with 9+ years building and scaling cloud platforms
+        for fintech, banking, media, and enterprise clients. Founded and led DevOps
+        practices from zero at multiple organizations. Expert in Kubernetes, CI/CD
+        automation, observability, and large-scale cloud migrations (on-prem to AWS/OCI).
+        Currently leading platform modernization and AI-driven operations initiatives
+        at Oracle. Pursuing Master's in Artificial Intelligence.
+      </p>
+
+      <h2>Technical Skills</h2>
+      <ul>
+        <li><strong>Programming:</strong> Python, Java, NodeJS, Shell, PL/SQL</li>
+        <li><strong>Cloud:</strong> AWS (ECR, EKS, ECS, EC2, S3, RDS, Lambda, DynamoDB), OCI DevOps</li>
+        <li><strong>DevOps/SRE:</strong> Jenkins, GitHub Actions, Docker, Kubernetes, Terraform, Ansible, Artifactory, SonarQube, Snyk</li>
+        <li><strong>Observability:</strong> Dynatrace, Grafana, CloudWatch, Kibana</li>
+        <li><strong>Mobile CI/CD:</strong> Fastlane (iOS/Android)</li>
+        <li><strong>AI/ML:</strong> Log anomaly detection, predictive analytics (in progress)</li>
+        <li><strong>Certifications:</strong> Oracle DevOps Certified</li>
+      </ul>
+
+      <h2>Experience</h2>
+
+      <h3>Principal DevOps Engineer — Oracle</h3>
+      <p style="color:var(--accent); font-family:var(--font-mono); font-size:0.85rem;">Apr 2025 - Present</p>
+      <ul>
+        <li>Leading migration of enterprise SCM from ClearCase to Git, developing custom APIs and a GUI frontend (Flet)</li>
+        <li>Designing and automating CI/CD pipelines using Jenkins, Ansible, Python, PL/SQL, and Shell across 20+ services</li>
+        <li>Building an AI-powered log analyzer for anomaly detection in CI/CD processes</li>
+        <li>Reduced CI/CD execution times by 35% through pipeline architecture redesign</li>
+        <li>Implemented repository governance, branch strategy, and workflow automation using Visual Builder Studio</li>
+      </ul>
+
+      <h3>DevOps & L2 Support Engineer — Santander Bank USA</h3>
+      <p style="color:var(--accent); font-family:var(--font-mono); font-size:0.85rem;">Feb 2024 - Apr 2025</p>
+      <ul>
+        <li>Provided L2 support and incident response across 20+ production services on AWS and on-prem</li>
+        <li>Root-cause analysis using Dynatrace, Grafana, Kibana, CloudWatch, and Lambda</li>
+        <li>Developed Python automation workflows for diagnostics</li>
+      </ul>
+
+      <h3>Senior DevOps Engineer — Albo</h3>
+      <p style="color:var(--accent); font-family:var(--font-mono); font-size:0.85rem;">Oct 2023 - Jan 2024</p>
+      <ul>
+        <li>Migrated 15+ CI/CD pipelines from Bitbucket to Jenkins</li>
+        <li>Implemented high-availability infrastructure using Kubernetes, Docker, EKS, ECS, and ECR</li>
+        <li>Integrated Terraform IaC and GitHub Actions</li>
+      </ul>
+
+      <h3>Head of DevOps / Middleware Dev Manager — Macropay</h3>
+      <p style="color:var(--accent); font-family:var(--font-mono); font-size:0.85rem;">Jun 2022 - Oct 2023</p>
+      <ul>
+        <li>Led a team of 15 engineers across DevOps and middleware development</li>
+        <li>Scaled DevOps workflows for 30+ microservices</li>
+        <li>Automated pipelines with Jenkins and Terraform, reducing release time from hours to minutes</li>
+      </ul>
+
+      <h3>DevOps Lead — TV Azteca Digital</h3>
+      <p style="color:var(--accent); font-family:var(--font-mono); font-size:0.85rem;">Oct 2021 - Jun 2022</p>
+      <ul>
+        <li>CI/CD workflows for 4 iOS and Android applications using Fastlane and GitHub Actions</li>
+        <li>Increased mobile release frequency from weekly to daily</li>
+      </ul>
+
+      <h3>DevOps Founder & Developer Lead — Aiontech</h3>
+      <p style="color:var(--accent); font-family:var(--font-mono); font-size:0.85rem;">Jul 2015 - Oct 2021</p>
+      <ul>
+        <li>Founded DevOps practice from scratch with Docker, Jenkins, Artifactory, and SonarQube</li>
+        <li>Delivered platforms for 10+ clients across banking (HSBC), retail, and government</li>
+        <li>Backend services with Java EE, SpringBoot, Camel, Hibernate, and JPA</li>
+      </ul>
+
+      <h2>Education</h2>
+      <ul>
+        <li><strong>Master's in Artificial Intelligence</strong> — UNIR (In Progress)</li>
+        <li><strong>B.S. Computer Engineering</strong> — IPN ESIME Culhuacan (2020)</li>
+        <li><strong>Digital Systems Technician</strong> — IPN CECyT 9 (2015)</li>
+      </ul>
+    </div>
+  </section>
+</BaseLayout>

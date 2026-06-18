@@ -1,0 +1,55 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const posts = [
+  {
+    title: "Platform Engineering vs DevOps: What Actually Changed?",
+    date: "2025-04-15",
+    description: "After 9+ years in DevOps, here's my take on the Platform Engineering debate — and why renaming your team isn't a transformation.",
+    slug: "platform-engineering-vs-devops",
+    tags: ["DevOps", "Platform Engineering", "Opinion"],
+  },
+  {
+    title: "Why I'm Building an AI Log Analyzer Instead of Just Using Datadog",
+    date: "2025-05-10",
+    description: "The story behind building a custom ML-based log analyzer for CI/CD pipelines at Oracle, and what commercial tools miss.",
+    slug: "ai-log-analyzer",
+    tags: ["AI/ML", "DevOps", "Oracle"],
+  },
+];
+---
+
+<BaseLayout title="Blog" description="Technical blog by Jesús Quevedo — DevOps, SRE, Cloud, and AI">
+  <section class="article" style="max-width:800px; padding-bottom:4rem;">
+    <div class="section-header">
+      <p class="section-label">$ cat /var/log/thoughts.log</p>
+      <h1 class="section-title">Blog</h1>
+      <div class="section-line"></div>
+    </div>
+
+    <p style="color:var(--text-secondary); margin-top:1rem; margin-bottom:2.5rem;">
+      Thoughts on DevOps, SRE, cloud architecture, and the intersection of AI with infrastructure.
+    </p>
+
+    <div class="blog-list">
+      {posts.map(post => (
+        <div class="card blog-card" style="display:block;">
+          <div style="display:flex; align-items:center; gap:1rem; margin-bottom:0.5rem;">
+            <span class="timeline-date">{post.date}</span>
+            {post.tags.map(t => <span class="card-tag">{t}</span>)}
+          </div>
+          <h3 style="margin-bottom:0.5rem;">
+            <a href={`/blog/${post.slug}`} style="color:var(--text-primary);">{post.title}</a>
+          </h3>
+          <p style="color:var(--text-secondary); font-size:0.9rem;">{post.description}</p>
+        </div>
+      ))}
+    </div>
+
+    <div style="text-align:center; margin-top:3rem; padding:2rem; border:1px dashed var(--border); border-radius:var(--radius);">
+      <p style="color:var(--text-muted); font-family:var(--font-mono); font-size:0.9rem;">
+        // more posts coming soon
+      </p>
+    </div>
+  </section>
+</BaseLayout>

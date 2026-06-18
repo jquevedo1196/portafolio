@@ -1,0 +1,115 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const projects = [
+  {
+    title: "AI-Powered CI/CD Log Analyzer",
+    description: "Machine learning pipeline that analyzes CI/CD logs to detect anomalies, predict build failures, and recommend fixes. Built at Oracle as part of internal DevOps tooling initiative.",
+    tags: ["Python", "Scikit-learn", "Jenkins", "Oracle", "AI/ML"],
+    github: "#",
+    status: "In Progress",
+    highlights: [
+      "Phase 1: Anomaly detection in build logs",
+      "Phase 2: Predictive error analysis using trained models",
+      "Phase 3: Automated remediation recommendations",
+    ]
+  },
+  {
+    title: "ClearCase to Git Migration Framework",
+    description: "Enterprise-grade SCM migration toolkit with custom REST APIs and a Flet-based GUI frontend. Handles branch mapping, history preservation, and team onboarding at scale.",
+    tags: ["Python", "Flet", "Git", "REST APIs", "Oracle"],
+    github: "#",
+    status: "Internal @ Oracle",
+    highlights: [
+      "Custom API layer for migration orchestration",
+      "GUI frontend for non-technical users",
+      "Automated branch strategy mapping",
+    ]
+  },
+  {
+    title: "EKS Production Cluster",
+    description: "Production-ready Amazon EKS cluster on Fargate with full infrastructure-as-code. Includes RBAC, monitoring stack, container insights, and GitOps-based deployments.",
+    tags: ["Kubernetes", "AWS EKS", "Terraform", "Helm", "Prometheus"],
+    github: "https://github.com/jquevedo1196",
+    highlights: [
+      "Fargate-based workloads for serverless K8s",
+      "RBAC with namespace isolation",
+      "Full monitoring: Prometheus + Grafana",
+    ]
+  },
+  {
+    title: "CI/CD Pipeline Templates",
+    description: "Reusable Jenkins pipeline library with shared libraries, parameterized builds, and multi-environment deployment support. Used across 20+ services.",
+    tags: ["Jenkins", "Groovy", "Docker", "Shell"],
+    github: "#",
+    status: "Coming Soon",
+    highlights: [
+      "Shared library architecture",
+      "Multi-branch pipeline support",
+      "Automated security scanning with Snyk",
+    ]
+  },
+  {
+    title: "Terraform AWS Modules",
+    description: "Collection of production-tested Terraform modules for AWS infrastructure: VPC, EKS, RDS, S3, IAM roles, and CloudWatch alarms.",
+    tags: ["Terraform", "AWS", "HCL", "IaC"],
+    github: "#",
+    status: "Coming Soon",
+    highlights: [
+      "Modular, composable architecture",
+      "Environment-specific variable management",
+      "State management with S3 + DynamoDB locking",
+    ]
+  },
+  {
+    title: "Mobile CI/CD with Fastlane",
+    description: "Automated build, test, and release pipeline for iOS and Android applications. Integrated with Jenkins, SonarQube, and app store distribution.",
+    tags: ["Fastlane", "Jenkins", "iOS", "Android", "GitHub Actions"],
+    github: "#",
+    status: "Coming Soon",
+    highlights: [
+      "Automated code signing and provisioning",
+      "Parallel builds for iOS and Android",
+      "Release frequency: weekly to daily",
+    ]
+  },
+];
+---
+
+<BaseLayout title="Projects" description="DevOps and SRE projects by Jesús Quevedo">
+  <section class="article" style="max-width:1100px; padding-bottom:4rem;">
+    <div class="section-header">
+      <p class="section-label">$ find ./projects -type f</p>
+      <h1 class="section-title">Projects</h1>
+      <div class="section-line"></div>
+    </div>
+
+    <p style="color:var(--text-secondary); margin-top:1rem; margin-bottom:2.5rem;">
+      A mix of production work, open-source contributions, and portfolio projects
+      demonstrating DevOps, SRE, and AI/ML skills.
+    </p>
+
+    <div class="projects-grid">
+      {projects.map(p => (
+        <div class="card project-card" style="display:flex; flex-direction:column;">
+          <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:0.5rem;">
+            <h3>{p.title}</h3>
+            {p.status && <span class="card-tag">{p.status}</span>}
+          </div>
+          <p>{p.description}</p>
+          {p.highlights && (
+            <ul style="color:var(--text-secondary); font-size:0.85rem; padding-left:1.2rem; margin-bottom:1rem;">
+              {p.highlights.map(h => <li>{h}</li>)}
+            </ul>
+          )}
+          <div style="margin-bottom:1rem;">
+            {p.tags.map(t => <span class="card-tag">{t}</span>)}
+          </div>
+          <div class="project-links" style="margin-top:auto;">
+            {p.github !== "#" && <a href={p.github} target="_blank" rel="noopener">GitHub &rarr;</a>}
+          </div>
+        </div>
+      ))}
+    </div>
+  </section>
+</BaseLayout>
