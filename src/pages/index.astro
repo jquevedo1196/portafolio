@@ -8,7 +8,7 @@ const skills = [
   { category: "DevOps / SRE", items: ["Kubernetes", "Docker", "Jenkins", "GitHub Actions", "Terraform", "Ansible", "Artifactory"] },
   { category: "Observability", items: ["Dynatrace", "Grafana", "CloudWatch", "Kibana"] },
   { category: "Languages", items: ["Python", "Java", "NodeJS", "Shell", "PL/SQL"] },
-  { category: "AI / ML", items: ["Log Anomaly Detection", "Predictive Analytics", "NLP"] },
+  { category: "AI / ML", items: ["Scikit-learn", "TensorFlow", "NLP", "Anomaly Detection", "Predictive Models", "Pandas", "LLMs"] },
   { category: "Security", items: ["SonarQube", "Snyk", "RBAC", "IAM"] },
 ];
 
@@ -40,7 +40,7 @@ const experience = [
     date: "Apr 2025 - Present",
     title: "Principal DevOps Engineer",
     company: "Oracle",
-    description: "Leading ClearCase-to-Git migration, building AI log analyzer, and automating CI/CD across 20+ services. Reduced pipeline times by 35%."
+    description: "Leading ClearCase-to-Git migration and building ML-powered log analyzer for anomaly detection. Designing and training predictive models for CI/CD pipelines. Reduced pipeline times by 35%."
   },
   {
     date: "Feb 2024 - Apr 2025",
@@ -81,9 +81,10 @@ const experience = [
           <span id="typewriter"></span><span class="cursor"></span>
         </p>
         <p class="hero-description">
-          I build platforms that engineering teams can actually trust.
+          I build platforms that engineering teams can actually trust —
+          and the AI tools that make them smarter.
           9+ years shipping infrastructure for fintech, banking, media,
-          and enterprise — from zero-to-production.
+          and enterprise. Now applying AI to DevOps at Oracle.
         </p>
         <div class="btn-group">
           <a href={`${base}projects/`} class="btn btn-primary">View Projects</a>
@@ -274,17 +275,37 @@ const experience = [
 
 <script>
   // === Typewriter ===
-  const text = "Principal DevOps Engineer / SRE @ Oracle";
+  const titles = [
+    "Principal DevOps Engineer @ Oracle",
+    "AI Engineer — MSc in Artificial Intelligence",
+  ];
   const el = document.getElementById("typewriter");
-  let i = 0;
-  function type() {
-    if (i < text.length) {
-      el.textContent += text.charAt(i);
-      i++;
-      setTimeout(type, 55);
+  let titleIdx = 0, charIdx = 0, deleting = false;
+
+  function typeLoop() {
+    const current = titles[titleIdx];
+    if (!deleting) {
+      el.textContent = current.substring(0, charIdx + 1);
+      charIdx++;
+      if (charIdx === current.length) {
+        setTimeout(() => { deleting = true; typeLoop(); }, 2000);
+        return;
+      }
+      setTimeout(typeLoop, 55);
+    } else {
+      el.textContent = current.substring(0, charIdx);
+      charIdx--;
+      if (charIdx < 0) {
+        deleting = false;
+        charIdx = 0;
+        titleIdx = (titleIdx + 1) % titles.length;
+        setTimeout(typeLoop, 400);
+        return;
+      }
+      setTimeout(typeLoop, 30);
     }
   }
-  setTimeout(type, 600);
+  setTimeout(typeLoop, 600);
 
   // === Animated counters ===
   function animateCounters() {
