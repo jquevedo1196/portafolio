@@ -5,23 +5,23 @@ const base = import.meta.env.BASE_URL;
 
 const skills = [
   { category: "Cloud", items: ["AWS", "OCI", "EKS", "ECS", "EC2", "Lambda", "S3", "RDS"] },
-  { category: "DevOps / SRE", items: ["Kubernetes", "Docker", "Jenkins", "GitHub Actions", "Terraform", "Ansible", "Artifactory"] },
-  { category: "Observability", items: ["Dynatrace", "Grafana", "CloudWatch", "Kibana"] },
-  { category: "Languages", items: ["Python", "Java", "NodeJS", "Shell", "PL/SQL"] },
-  { category: "AI / ML", items: ["Scikit-learn", "TensorFlow", "NLP", "Anomaly Detection", "Predictive Models", "Pandas", "LLMs"] },
+  { category: "DevOps / SRE", items: ["Kubernetes", "Docker", "Jenkins", "GitHub Actions", "Terraform", "Ansible", "Helm", "Artifactory"] },
+  { category: "Observability", items: ["Dynatrace", "Grafana", "Prometheus", "OpenTelemetry", "CloudWatch", "Kibana"] },
+  { category: "Languages", items: ["Python", "Go", "Java", "Shell", "PL/SQL", "NodeJS"] },
+  { category: "AI / ML", items: ["Scikit-learn", "TensorFlow", "MLflow", "FastAPI", "Pandas", "NLP", "LLMs", "FastMCP"] },
   { category: "Security", items: ["SonarQube", "Snyk", "RBAC", "IAM"] },
 ];
 
 const featuredProjects = [
   {
     title: "AI-Powered CI/CD Log Analyzer",
-    description: "ML-based anomaly detection for CI/CD pipeline logs. Detects failures before they happen using pattern recognition and predictive models.",
-    tags: ["Python", "ML", "Jenkins", "Oracle"],
+    description: "Multi-agent RCA system for CI/CD pipelines. Orchestrator, Worker, and Auditor agents collaborate through MCP Gateway to analyze logs, generate root cause analysis, and validate results against hallucination.",
+    tags: ["Python", "Multi-Agent", "MCP", "FastMCP", "Oracle"],
     github: "#",
     status: "In Progress"
   },
   {
-    title: "EKS Production Cluster",
+    title: "EKS Fargate Production Cluster",
     description: "Production-ready EKS Fargate cluster with RBAC, monitoring, auto-scaling, and GitOps deployment. Full IaC with Terraform.",
     tags: ["Kubernetes", "AWS", "Terraform", "Helm"],
     github: "https://github.com/jquevedo1196",
@@ -40,7 +40,7 @@ const experience = [
     date: "Apr 2025 - Present",
     title: "Principal DevOps Engineer",
     company: "Oracle",
-    description: "Leading ClearCase-to-Git migration and building ML-powered log analyzer for anomaly detection. Designing and training predictive models for CI/CD pipelines. Reduced pipeline times by 35%."
+    description: "Modernizing legacy systems (ClearCase → Git) and driving AI integration into DevOps workflows as part of Oracle's AI adoption initiative. Building a multi-agent RCA system for CI/CD pipelines. Reduced pipeline times by 35%."
   },
   {
     date: "Feb 2024 - Apr 2025",
@@ -52,19 +52,19 @@ const experience = [
     date: "Jun 2022 - Oct 2023",
     title: "Head of DevOps",
     company: "Macropay",
-    description: "Led 15 engineers. Scaled DevOps workflows for 30+ microservices. Reduced release time from hours to minutes."
+    description: "Built DevOps from zero in a company with no prior culture. Led on-prem → AWS migration (Lambda, ECS, EKS), built deployment automation with Python/Boto3 and Terraform, created ephemeral dev environments, trained devs into DevOps roles, and led 15 engineers across 30+ microservices."
   },
   {
     date: "Oct 2021 - Jun 2022",
     title: "DevOps Lead",
     company: "TV Azteca Digital",
-    description: "CI/CD for mobile apps with Fastlane. Increased release frequency from weekly to daily."
+    description: "Unified iOS/Android CI/CD with Fastlane and GitHub Actions. Added SonarQube quality gates, defined branching strategy, and built Smartsheet webhook integrations for PM-triggered self-service deployments. Weekly → daily releases."
   },
   {
     date: "Jul 2015 - Oct 2021",
     title: "DevOps Founder & Developer Lead",
     company: "Aiontech",
-    description: "Founded DevOps practice from scratch. Delivered platforms for 10+ clients including HSBC and government entities."
+    description: "Founded the DevOps practice from zero — introduced Docker, built the full CI/CD pipeline with Jenkins and SonarQube, defined branching strategy, and migrated legacy Java 6/7 to Spring Boot on AWS (EC2 → ECS). Delivered platforms for 10+ clients including HSBC."
   },
 ];
 ---
@@ -114,29 +114,6 @@ const experience = [
     </div>
   </section>
 
-  <!-- Skills -->
-  <section id="skills">
-    <div class="container">
-      <div class="section-header">
-        <p class="section-label">$ kubectl get skills</p>
-        <h2 class="section-title">Skills & Tools</h2>
-        <div class="section-line"></div>
-      </div>
-      <div class="skills-grid">
-        {skills.map(s => (
-          <div class="card skill-category">
-            <h3>{s.category}</h3>
-            <div class="skill-items">
-              {s.items.map(item => (
-                <span class="skill-item">{item}</span>
-              ))}
-            </div>
-          </div>
-        ))}
-      </div>
-    </div>
-  </section>
-
   <!-- Currently Building Spotlight -->
   <section id="spotlight">
     <div class="container">
@@ -153,19 +130,86 @@ const experience = [
               ACTIVE DEVELOPMENT
             </div>
             <h3 class="spotlight-title">AI-Powered CI/CD Log Analyzer</h3>
-            <p class="spotlight-subtitle">Anomaly detection and predictive error analysis for enterprise CI/CD pipelines @ Oracle</p>
+            <p class="spotlight-subtitle">Multi-agent RCA system with 3 agent roles, Agent Gateway, and MCP Gateway for enterprise CI/CD pipelines @ Oracle</p>
           </div>
         </div>
+
+        <div class="spotlight-architecture">
+          <div class="arch-flow-animated">
+            <div class="arch-node-anim" data-step="1">
+              <span class="arch-icon">&#9881;</span>
+              <span class="arch-label">Orchestrator</span>
+              <span class="arch-desc">Receives task</span>
+            </div>
+            <div class="arch-arrow-anim" data-step="2"><span class="arrow-head">&rarr;</span></div>
+            <div class="arch-gateway-anim" data-step="2">
+              <span class="arch-label">Agent Gateway</span>
+              <span class="arch-desc">Access control</span>
+            </div>
+            <div class="arch-arrow-anim" data-step="3"><span class="arrow-head">&rarr;</span></div>
+            <div class="arch-node-anim" data-step="3">
+              <span class="arch-icon">&#9881;</span>
+              <span class="arch-label">Workers</span>
+              <span class="arch-desc">Collect data</span>
+            </div>
+            <div class="arch-arrow-anim" data-step="4"><span class="arrow-head">&rarr;</span></div>
+            <div class="arch-gateway-anim" data-step="4">
+              <span class="arch-label">MCP Gateway</span>
+              <span class="arch-desc">Tool access</span>
+            </div>
+            <div class="arch-arrow-anim" data-step="5"><span class="arrow-head">&rarr;</span></div>
+            <div class="arch-node-anim" data-step="5">
+              <span class="arch-icon">&#128196;</span>
+              <span class="arch-label">Initial RCA</span>
+              <span class="arch-desc">Report generated</span>
+            </div>
+            <div class="arch-arrow-anim" data-step="6"><span class="arrow-head">&rarr;</span></div>
+            <div class="arch-node-anim" data-step="6">
+              <span class="arch-icon">&#9989;</span>
+              <span class="arch-label">Auditor</span>
+              <span class="arch-desc">Validates</span>
+            </div>
+            <div class="arch-arrow-anim" data-step="7"><span class="arrow-head">&rarr;</span></div>
+            <div class="arch-node-anim" data-step="7">
+              <span class="arch-icon">&#127942;</span>
+              <span class="arch-label">Final RCA</span>
+              <span class="arch-desc">Validated result</span>
+            </div>
+          </div>
+        </div>
+
         <div class="spotlight-phases">
-          <div class="phase phase-active">
+          <div class="phase phase-complete">
             <div class="phase-indicator">
               <span class="phase-dot phase-dot-active"></span>
               <span class="phase-line phase-line-done"></span>
             </div>
             <div class="phase-content">
-              <p class="phase-label">Phase 1</p>
-              <p class="phase-name">Anomaly Detection</p>
-              <p class="phase-desc">Pattern recognition in build logs to flag unusual behavior</p>
+              <p class="phase-label">Phase 1 <span class="phase-badge-complete">COMPLETE</span></p>
+              <p class="phase-name">Multi-Agent Orchestration</p>
+              <p class="phase-desc">3-role agent architecture with retry loop</p>
+            </div>
+          </div>
+          <div class="phase phase-complete">
+            <div class="phase-indicator">
+              <span class="phase-dot phase-dot-active"></span>
+              <span class="phase-line phase-line-done"></span>
+            </div>
+            <div class="phase-content">
+              <p class="phase-label">Phase 2 <span class="phase-badge-complete">COMPLETE</span></p>
+              <p class="phase-name">RCA Generation & Validation</p>
+              <p class="phase-desc">Workers generate RCA, Auditor validates against hallucination</p>
+            </div>
+          </div>
+          <div class="phase phase-complete">
+            <div class="phase-indicator">
+              <span class="phase-dot phase-dot-active"></span>
+              <span class="phase-line phase-line-done"></span>
+            </div>
+            <div class="phase-content">
+              <p class="phase-label">Phase 3 <span class="phase-badge-complete">COMPLETE</span></p>
+              <p class="phase-name">Gateway Security & Scaling</p>
+              <p class="phase-desc">Agent Gateway + MCP Gateway for access control</p>
             </div>
           </div>
           <div class="phase phase-current">
@@ -174,9 +218,9 @@ const experience = [
               <span class="phase-line"></span>
             </div>
             <div class="phase-content">
-              <p class="phase-label">Phase 2 <span class="phase-badge-current">IN PROGRESS</span></p>
-              <p class="phase-name">Predictive Error Analysis</p>
-              <p class="phase-desc">ML models trained on historical data to predict failures before they happen</p>
+              <p class="phase-label">Phase 4 <span class="phase-badge-current">IN PROGRESS</span></p>
+              <p class="phase-name">Real Scenario Testing</p>
+              <p class="phase-desc">Finalizing validation against real CI/CD failure scenarios</p>
             </div>
           </div>
           <div class="phase phase-upcoming">
@@ -184,18 +228,19 @@ const experience = [
               <span class="phase-dot phase-dot-upcoming"></span>
             </div>
             <div class="phase-content">
-              <p class="phase-label">Phase 3</p>
-              <p class="phase-name">Automated Remediation</p>
-              <p class="phase-desc">Recommend and apply fixes based on learned patterns</p>
+              <p class="phase-label">Phase 5</p>
+              <p class="phase-name">Human-in-the-Loop Feedback</p>
+              <p class="phase-desc">Agent learns from fix feedback to propose solutions autonomously</p>
             </div>
           </div>
         </div>
         <div class="spotlight-tags">
           <span class="card-tag">Python</span>
-          <span class="card-tag">Scikit-learn</span>
-          <span class="card-tag">Jenkins</span>
+          <span class="card-tag">Multi-Agent</span>
+          <span class="card-tag">FastMCP</span>
+          <span class="card-tag">Agent Gateway</span>
+          <span class="card-tag">MCP Gateway</span>
           <span class="card-tag">Oracle</span>
-          <span class="card-tag">NLP</span>
         </div>
       </div>
     </div>
@@ -206,7 +251,7 @@ const experience = [
     <div class="container">
       <div class="section-header">
         <p class="section-label">$ ls projects/</p>
-        <h2 class="section-title">What I'm Building</h2>
+        <h2 class="section-title">Some of My Projects</h2>
         <div class="section-line"></div>
       </div>
       <div class="projects-grid">
@@ -247,6 +292,29 @@ const experience = [
             <h3 class="timeline-title">{e.title}</h3>
             <p class="timeline-company">{e.company}</p>
             <p class="timeline-description">{e.description}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Skills -->
+  <section id="skills">
+    <div class="container">
+      <div class="section-header">
+        <p class="section-label">$ kubectl get skills</p>
+        <h2 class="section-title">Skills & Tools</h2>
+        <div class="section-line"></div>
+      </div>
+      <div class="skills-grid">
+        {skills.map(s => (
+          <div class="card skill-category">
+            <h3>{s.category}</h3>
+            <div class="skill-items">
+              {s.items.map(item => (
+                <span class="skill-item">{item}</span>
+              ))}
+            </div>
           </div>
         ))}
       </div>

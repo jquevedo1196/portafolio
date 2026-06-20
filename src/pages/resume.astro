@@ -13,7 +13,7 @@ const base = import.meta.env.BASE_URL;
     </div>
 
     <div style="margin-top:1.5rem; margin-bottom:2rem;">
-      <a href={`${base}Resume_DevOps_SRE_v2.pdf`} download class="btn btn-primary">
+      <a href={`${base}Resume_DevOps_SRE_v3.pdf`} download class="btn btn-primary">
         Download PDF
       </a>
     </div>
@@ -21,23 +21,23 @@ const base = import.meta.env.BASE_URL;
     <div class="article-content">
       <h2>Summary</h2>
       <p>
-        Principal DevOps/SRE Engineer with 9+ years building and scaling cloud platforms
+        Principal DevOps/SRE Engineer and AI Engineer with 9+ years building and scaling cloud platforms
         for fintech, banking, media, and enterprise clients. Founded and led DevOps
         practices from zero at multiple organizations. Expert in Kubernetes, CI/CD
-        automation, observability, and large-scale cloud migrations (on-prem to AWS/OCI).
-        Currently leading platform modernization and AI-driven operations initiatives
-        at Oracle. Pursuing Master's in Artificial Intelligence.
+        automation, observability, and large-scale cloud migrations (on-prem → AWS/OCI).
+        Currently driving AI integration into DevOps workflows at Oracle, building multi-agent
+        systems for automated root cause analysis. Pursuing Master's in Artificial Intelligence.
       </p>
 
       <h2>Technical Skills</h2>
       <ul>
-        <li><strong>Programming:</strong> Python, Java, NodeJS, Shell, PL/SQL</li>
+        <li><strong>Programming:</strong> Python, Go, Java, Shell, PL/SQL, NodeJS</li>
         <li><strong>Cloud:</strong> AWS (ECR, EKS, ECS, EC2, S3, RDS, Lambda, DynamoDB), OCI DevOps</li>
-        <li><strong>DevOps/SRE:</strong> Jenkins, GitHub Actions, Docker, Kubernetes, Terraform, Ansible, Artifactory, SonarQube, Snyk</li>
-        <li><strong>Observability:</strong> Dynatrace, Grafana, CloudWatch, Kibana</li>
+        <li><strong>DevOps/SRE:</strong> Jenkins, GitHub Actions, Docker, Kubernetes, Terraform, Ansible, Helm, Artifactory, SonarQube, Snyk</li>
+        <li><strong>Observability:</strong> Prometheus, OpenTelemetry, Dynatrace, Grafana, CloudWatch, Kibana</li>
+        <li><strong>AI/ML:</strong> Scikit-learn, TensorFlow, MLflow, FastAPI, Pandas, NLP, LLMs, FastMCP (MCP Development)</li>
         <li><strong>Mobile CI/CD:</strong> Fastlane (iOS/Android)</li>
-        <li><strong>AI/ML:</strong> Log anomaly detection, predictive analytics (in progress)</li>
-        <li><strong>Certifications:</strong> Oracle DevOps Certified</li>
+        <li><strong>Certifications:</strong> Python Essentials for MLOps (Duke) | OCI 2025 AI Foundations Associate | OCI 2025 Foundations Associate | OCI DevOps (In Progress)</li>
       </ul>
 
       <h2>Experience</h2>
@@ -45,9 +45,10 @@ const base = import.meta.env.BASE_URL;
       <h3>Principal DevOps Engineer — Oracle</h3>
       <p style="color:var(--accent); font-family:var(--font-mono); font-size:0.85rem;">Apr 2025 - Present</p>
       <ul>
-        <li>Leading migration of enterprise SCM from ClearCase to Git, developing custom APIs and a GUI frontend (Flet)</li>
+        <li>Leading the modernization of legacy systems — migrating enterprise SCM from ClearCase to Git, developing custom APIs and a GUI frontend (Flet) to support the transition for internal teams</li>
+        <li>Driving AI integration into DevOps workflows as part of Oracle's company-wide AI adoption initiative — directly aligned with my Master's in AI Engineering</li>
+        <li>Building a multi-agent RCA system (Orchestrator → Workers → Auditor) with Agent Gateway and MCP Gateway — targeting reduction of root cause analysis from ~3 hours to under 10 minutes across interconnected legacy systems</li>
         <li>Designing and automating CI/CD pipelines using Jenkins, Ansible, Python, PL/SQL, and Shell across 20+ services</li>
-        <li>Building an AI-powered log analyzer for anomaly detection in CI/CD processes</li>
         <li>Reduced CI/CD execution times by 35% through pipeline architecture redesign</li>
         <li>Implemented repository governance, branch strategy, and workflow automation using Visual Builder Studio</li>
       </ul>
@@ -60,35 +61,34 @@ const base = import.meta.env.BASE_URL;
         <li>Developed Python automation workflows for diagnostics</li>
       </ul>
 
-      <h3>Senior DevOps Engineer — Albo</h3>
-      <p style="color:var(--accent); font-family:var(--font-mono); font-size:0.85rem;">Oct 2023 - Jan 2024</p>
-      <ul>
-        <li>Migrated 15+ CI/CD pipelines from Bitbucket to Jenkins</li>
-        <li>Implemented high-availability infrastructure using Kubernetes, Docker, EKS, ECS, and ECR</li>
-        <li>Integrated Terraform IaC and GitHub Actions</li>
-      </ul>
-
       <h3>Head of DevOps / Middleware Dev Manager — Macropay</h3>
       <p style="color:var(--accent); font-family:var(--font-mono); font-size:0.85rem;">Jun 2022 - Oct 2023</p>
       <ul>
-        <li>Led a team of 15 engineers across DevOps and middleware development</li>
-        <li>Scaled DevOps workflows for 30+ microservices</li>
-        <li>Automated pipelines with Jenkins and Terraform, reducing release time from hours to minutes</li>
+        <li>Built the entire DevOps practice from zero in a company with no prior DevOps culture — defined processes, tooling, and workflows collaborating with Architecture, Testing, PM, and Security teams</li>
+        <li>Led the full on-premise to AWS migration: evaluated and selected deployment services (Lambda, ECS, EKS, EC2) per workload, and built the deployment automation with Python/Boto3, Terraform, and Jenkins — all aligned with cybersecurity to protect sensitive data</li>
+        <li>Created ephemeral development environments that spun up and destroyed on demand — brought AWS spend from 2x over budget down to 95% budget compliance, complemented with Reserved Instance allocations</li>
+        <li>Trained developers and sysadmins on AWS, containers, and Kubernetes — successfully upskilled them into DevOps roles</li>
+        <li>Designed a self-service deployment platform so developers could manage their own releases with the components they needed — in progress before transitioning to development management</li>
+        <li>Led a team of 15 engineers across DevOps and middleware development, scaling workflows for 30+ microservices</li>
       </ul>
 
       <h3>DevOps Lead — TV Azteca Digital</h3>
       <p style="color:var(--accent); font-family:var(--font-mono); font-size:0.85rem;">Oct 2021 - Jun 2022</p>
       <ul>
-        <li>CI/CD workflows for 4 iOS and Android applications using Fastlane and GitHub Actions</li>
+        <li>Unified iOS and Android deployment using Fastlane, ensuring a single consistent release process across both platforms</li>
+        <li>Implemented GitHub Actions for build verification on every deployment, integrated SonarQube for code quality gates</li>
+        <li>Defined the branching strategy and release workflow for all mobile projects</li>
+        <li>Built Smartsheet webhook integrations so PMs could trigger deployments via cards — removing the DevOps bottleneck and enabling self-service releases</li>
         <li>Increased mobile release frequency from weekly to daily</li>
       </ul>
 
       <h3>DevOps Founder & Developer Lead — Aiontech</h3>
       <p style="color:var(--accent); font-family:var(--font-mono); font-size:0.85rem;">Jul 2015 - Oct 2021</p>
       <ul>
-        <li>Founded DevOps practice from scratch with Docker, Jenkins, Artifactory, and SonarQube</li>
-        <li>Delivered platforms for 10+ clients across banking (HSBC), retail, and government</li>
-        <li>Backend services with Java EE, SpringBoot, Camel, Hibernate, and JPA</li>
+        <li>Founded the DevOps practice from zero — introduced Docker containers, trained the team on containerized development environments, and built the full CI/CD pipeline end-to-end with Jenkins, GitHub, SonarQube, and Artifactory</li>
+        <li>Defined the branching strategy and release workflow adopted across all projects</li>
+        <li>Migrated legacy Java 6/7 applications to Java 8 with Spring Boot, containerized them with Docker, and deployed to AWS EC2 — later migrated to ECS for orchestrated container deployments</li>
+        <li>Delivered platforms for 10+ clients across banking (HSBC, InvestaBank), retail, and government sectors</li>
       </ul>
 
       <h2>Education</h2>

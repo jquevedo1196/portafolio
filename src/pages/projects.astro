@@ -4,14 +4,14 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 const projects = [
   {
     title: "AI-Powered CI/CD Log Analyzer",
-    description: "Machine learning pipeline that analyzes CI/CD logs to detect anomalies, predict build failures, and recommend fixes. Built at Oracle as part of internal DevOps tooling initiative.",
-    tags: ["Python", "Scikit-learn", "Jenkins", "Oracle", "AI/ML"],
+    description: "Multi-agent RCA system for CI/CD pipelines. Three agent roles — Orchestrator, Workers, and Auditor — collaborate through Agent Gateway and MCP Gateway to analyze logs, generate root cause analysis, and validate results against hallucination before producing the final report.",
+    tags: ["Python", "Multi-Agent", "FastMCP", "Agent Gateway", "MCP Gateway", "Oracle"],
     github: "#",
     status: "In Progress",
     highlights: [
-      "Phase 1: Anomaly detection in build logs",
-      "Phase 2: Predictive error analysis using trained models",
-      "Phase 3: Automated remediation recommendations",
+      "Orchestrator receives tasks, spawns Worker agents to collect data via MCPs",
+      "Workers build initial RCA reports from pipeline logs and tool outputs",
+      "Auditor validates for hallucination — approves final RCA or retries with annotations",
     ]
   },
   {
@@ -27,7 +27,7 @@ const projects = [
     ]
   },
   {
-    title: "EKS Production Cluster",
+    title: "EKS Fargate Production Cluster",
     description: "Production-ready Amazon EKS cluster on Fargate with full infrastructure-as-code. Includes RBAC, monitoring stack, container insights, and GitOps-based deployments.",
     tags: ["Kubernetes", "AWS EKS", "Terraform", "Helm", "Prometheus"],
     github: "https://github.com/jquevedo1196",
@@ -42,7 +42,7 @@ const projects = [
     description: "Reusable Jenkins pipeline library with shared libraries, parameterized builds, and multi-environment deployment support. Used across 20+ services.",
     tags: ["Jenkins", "Groovy", "Docker", "Shell"],
     github: "#",
-    status: "Coming Soon",
+    status: "Internal",
     highlights: [
       "Shared library architecture",
       "Multi-branch pipeline support",
@@ -54,7 +54,7 @@ const projects = [
     description: "Collection of production-tested Terraform modules for AWS infrastructure: VPC, EKS, RDS, S3, IAM roles, and CloudWatch alarms.",
     tags: ["Terraform", "AWS", "HCL", "IaC"],
     github: "#",
-    status: "Coming Soon",
+    status: "Internal",
     highlights: [
       "Modular, composable architecture",
       "Environment-specific variable management",
@@ -66,7 +66,7 @@ const projects = [
     description: "Automated build, test, and release pipeline for iOS and Android applications. Integrated with Jenkins, SonarQube, and app store distribution.",
     tags: ["Fastlane", "Jenkins", "iOS", "Android", "GitHub Actions"],
     github: "#",
-    status: "Coming Soon",
+    status: "Internal",
     highlights: [
       "Automated code signing and provisioning",
       "Parallel builds for iOS and Android",
@@ -85,8 +85,7 @@ const projects = [
     </div>
 
     <p style="color:var(--text-secondary); margin-top:1rem; margin-bottom:2.5rem;">
-      A mix of production work, open-source contributions, and portfolio projects
-      demonstrating DevOps, SRE, and AI/ML skills.
+      Production work and internal projects demonstrating DevOps, SRE, and AI/ML skills.
     </p>
 
     <div class="projects-grid">
