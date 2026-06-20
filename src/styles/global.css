@@ -85,7 +85,7 @@ code, .mono {
 }
 
 section {
-  padding: 5rem 0;
+  padding: 3.5rem 0;
 }
 
 /* -- Components -- */
@@ -137,6 +137,12 @@ section {
 .nav-links a:hover,
 .nav-links a.active {
   color: var(--accent);
+}
+
+.nav-links a:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 4px;
+  border-radius: 2px;
 }
 
 .nav-links a::after {
